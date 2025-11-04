@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="alert alert-info text-center fs-5">
+  {{ message }}
+</div>
+<div class="text-center">
+  <p>Games today: {{ stats.games_today }}</p>
+  <p>Total games: {{ stats.total_games }}</p>
+  <a href="/" class="btn btn-secondary">Back Home</a>
+</div>
+{% endblock %}

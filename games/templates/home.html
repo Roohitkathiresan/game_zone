@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="text-center">
+  <h2>Welcome, {{ user.username }}!</h2>
+  <p class="lead">You have played {{ stats.games_today }} games today.</p>
+  <p>Total games played: {{ stats.total_games }}</p>
+  <a href="/games/play" class="btn btn-lg btn-primary">Play a Game</a>
+</div>
+{% endblock %}

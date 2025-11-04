@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>🎮 Game Access Management System</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-dark text-light">
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary px-3">
+  <a class="navbar-brand fw-bold" href="/">GAMS</a>
+  <div class="ms-auto">
+    {% if user.is_authenticated %}
+      <span class="me-3">Hi, {{ user.username }}</span>
+      <a href="/games/play" class="btn btn-light btn-sm">Play</a>
+      <a href="/logout/" class="btn btn-outline-light btn-sm">Logout</a>
+    {% else %}
+      <a href="/users/register" class="btn btn-outline-light btn-sm">Register</a>
+      <a href="/login/" class="btn btn-light btn-sm">Login</a>
+    {% endif %}
+  </div>
+</nav>
+<div class="container py-5">
+  {% block content %}{% endblock %}
+</div>
+</body>
+</html>
